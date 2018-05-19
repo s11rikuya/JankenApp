@@ -1,23 +1,23 @@
 
 
 def janken
-  puts "最初はグー、じゃんけん...
-  [0]:グー
-  [1]:チョキ
-  [2]:パー"
+  puts "lock paper scissors ?
+  [0]:lock
+  [1]:paper
+  [2]:scissors"
   player = gets.chomp.to_i
   cpu = rand(3)
-  choise = ["グー","チョキ","パー"]
+  choise = ["lock","paper","scissors"]
 
   puts "#{choise[player]} VS #{choise[cpu]}"
   if player == cpu
-    puts "あいこ"
-  elsif (player == 0 && cpu == 1) || (player == 1 && cpu == 2 )|| (player == 2 && cpu == 0)
-    puts "勝ち"
+    puts "draw"
+  elsif (player == 0 && cpu == 2) || (player == 1 && cpu == 0 )|| (player == 2 && cpu == 1)
+    puts "win"
       return exit
   else
-    puts "負け"
-        return exit #defから抜けない
+    puts "lose"
+        return exit
   end
 end
 
